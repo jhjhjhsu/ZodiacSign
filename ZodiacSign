@@ -9,9 +9,11 @@ import datetime
 result= "Your are {}! "
 
 
-print("Find your Zodiac Sign. ")
 birthday=input ("When is your birthday? (Enter format as mm,dd)")
-birthday= datetime.datetime(2019, birthday)
+month, comma, day = birthday.partition(",")
+month = int(month)  #Convert month from string to int.
+day = int(day)   #Convert day from string to int.
+birthday= datetime.datetime(2019, month, day)
 
 if birthday < datetime.datetime(2019,1,20):
     print(f"{result} Capricorn! ")
